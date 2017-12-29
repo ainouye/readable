@@ -1,9 +1,9 @@
-import { ADD_CATEGORY, ADD_COMMENT, ADD_POST, DELETE_COMMENT, DELETE_POST, EDIT_COMMENT, EDIT_POST, VOTE_COMMENT, VOTE_POST } from '../actions'
+import * as act from '../actions'
 import { combineReducers } from 'redux';
 
 function categories(state=[], action) {
   switch (action.type) {
-    case ADD_CATEGORY:
+    case act.ADD_CATEGORY:
       return [
         ...state,
         {
@@ -19,7 +19,7 @@ function categories(state=[], action) {
 
 function posts (state={}, action) {
   switch (action.type) {
-    case ADD_POST:
+    case act.ADD_POST:
       return {
         ...state,
         [action.id]: {
@@ -31,7 +31,7 @@ function posts (state={}, action) {
           voteScore: action.voteScore
         }
       }
-    case EDIT_POST:
+    case act.EDIT_POST:
       return {
         ...state,
         [action.id]: {
@@ -40,12 +40,12 @@ function posts (state={}, action) {
           body: action.body
         }
       }
-    case DELETE_POST:
+    case act.DELETE_POST:
       return {
         ...state,
         [action.id]: null
       }
-    case VOTE_POST:
+    case act.VOTE_POST:
       return {
         ...state,
         [action.id]: {
@@ -60,7 +60,7 @@ function posts (state={}, action) {
 
 function comments(state=[], action) {
   switch (action.type) {
-    case ADD_COMMENT:
+    case act.ADD_COMMENT:
       return {
         ...state,
         [action.id]: {
@@ -71,7 +71,7 @@ function comments(state=[], action) {
           voteScore: action.voteScore
         }
       }
-    case EDIT_COMMENT:
+    case act.EDIT_COMMENT:
       return {
         ...state,
         [action.id]: {
@@ -79,7 +79,7 @@ function comments(state=[], action) {
           body: action.body
         }
       }
-    case VOTE_COMMENT:
+    case act.VOTE_COMMENT:
       return {
         ...state,
         [action.id]: {
@@ -87,7 +87,7 @@ function comments(state=[], action) {
           voteScore: action.voteScore
         }
       }
-    case DELETE_COMMENT:
+    case act.DELETE_COMMENT:
     console.log('ok')
       return {
         ...state,
