@@ -88,6 +88,7 @@ function comments(state=[], action) {
         }
       }
     case DELETE_COMMENT:
+    console.log('ok')
       return {
         ...state,
         [action.id]: null

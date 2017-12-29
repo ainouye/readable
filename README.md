@@ -1,5 +1,13 @@
-To Run:
--Download & start api-server using node server
--Download project code
--Use npm install
--npm start to run at http://localhost:3000/
+To Run Backend Server:
+-Download or clone backend server here: https://github.com/udacity/reactnd-project-readable-starter
+-cd api-server
+-npm install
+-node server
+
+To Run Project:
+-Download or clone project code
+-cd readable
+-npm install
+-npm start
+
+Navigate to http://localhost:3000/

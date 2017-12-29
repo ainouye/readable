@@ -93,6 +93,7 @@ export function removeStore({ id, type }) {
     if (type === 'comments') {
         typeAction = DELETE_COMMENT
     }
+
     return {
         type: typeAction,
         id
@@ -106,7 +107,7 @@ function deleteDatabase({ id, type }) {
 export function removeObject(data) {
   return function (dispatch) {
     return deleteDatabase(data).then(
-        (object) => dispatch(removeStore(data))
+        (ob) => dispatch(removeStore(data))
     )
   }
 }

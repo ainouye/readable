@@ -54,6 +54,21 @@ header a {
 }
 
 .category-post a {
+    color: black;
+}
+
+.category-post div.edit-icons {
+    float: left;
+    padding: 9px 2px 0;
+}
+.category-post div.edit-icons .glypicon {
+    padding-right: 2px;
+}
+.category-post .glypicon {
+    cursor: pointer;
+}
+
+.category-post a h4{
     color: #9BC995;
     font-size: 16px;
     font-weight: bold;

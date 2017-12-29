@@ -3,21 +3,12 @@ import { connect } from 'react-redux'
 import { Button, Col, Glyphicon, Grid, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Comment from './Comment'
-import { removeObject, populateComment, trackVote } from '../actions'
+import { removeObject, trackVote } from '../actions'
 import { formatDate } from '../utils/helpers'
-import * as ReadableAPI from '../utils/api'
 
 class PostDetail extends React.Component {
-    componentWillMount() {
-        ReadableAPI.getComments(this.props.match.params.postId).then((comments) => {
-            comments.forEach(function(comment) {
-                this.props.addAllComments({ ...comment })
-            }, this)
-        }).catch(e => {})
-    }
-
     deleteOnClick = () => {
-        this.props.deletePost(this.props.match.params.postId, "posts")
+        this.props.deletePost({ id: this.props.match.params.postId, type: "posts" })
         this.props.history.push('/')
     }
 
@@ -77,8 +68,8 @@ class PostDetail extends React.Component {
                 <Grid>
                     <Row className="show-grid">
                         <Col xs={12}>
-                            <h3>Comments</h3>
-                            <Link to={ "/edit_comment/" + match.params.postId + "/"}><Button bsSize="small"><Glyphicon glyph="plus" /> New Post</Button></Link>
+                            <h3>Comments ({ comments.length })</h3>
+                            <Link to={ "/edit_comment/" + match.params.postId + "/"}><Button bsSize="small"><Glyphicon glyph="plus" /> New Comment</Button></Link>
                             { comments && (
                                 comments.map((comment) => (
                                     <Comment key={ comment.id } commentId={ comment.id } />
@@ -102,12 +93,15 @@ function mapStateToProps ({ posts, comments }, props) {
         }
         return allComments
     }, [])
+
+    if (!posts[props.match.params.postId]) {
+        props.history.push('/')
+    }
     return { 'post': posts[props.match.params.postId], comments: mappedComments }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    addAllComments: (data) => dispatch(populateComment(data)),
     deletePost: (data) => dispatch(removeObject(data)),
     votePost: (data) => dispatch(trackVote(data)),
   }
