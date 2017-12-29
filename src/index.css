@@ -1,0 +1,136 @@
+body {
+    background-color: #edf4ee;
+    color: #1B2021;
+}
+
+h1 {
+    color: #1B2021;
+    margin-bottom: 10px;
+    line-height: 1em;
+}
+
+header {
+    background-color: #1b2021;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+header a {
+    color: #fcfcfc;
+    font-size: 20px;
+}
+
+/* CATEGORY DETAIL */
+
+.panel {
+    border: 1px solid #45A3A6;
+    margin: 5px auto 40px;
+    border-radius: 3px;
+}
+
+.panel-heading {
+    background-color: #45A3A6;
+    padding: 10px 15px 0px 15px;
+    color: #fcfcfc;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.panel-heading p {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.panel-heading a, .panel-heading p {
+    color: #fff;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.category-post {
+    padding: 10px 15px 0px 15px;
+    border-bottom: 1px solid #45A3A6;
+    background-color: #fcfcfc;
+}
+
+.category-post a {
+    color: #9BC995;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.category-post p {
+    font-size: 12px;
+}
+
+.badge {
+    background-color: #9BC995;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.category-post .row,
+.post-detail .row {
+    display: flex;
+    align-items: center;
+}
+
+/* POST DETAIL */
+
+.post-content {
+    margin-top: 10px;
+}
+
+.post-content p {
+    margin-top: 20px;
+    line-height: 1.7em;
+}
+
+.posting-detail {
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.post-votes {
+    margin-top: 20px;
+    border: 1px solid #9BC995;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.post-votes span.number-vote {
+    margin: 5px;
+    font-size: 20px;
+}
+
+.post-votes span.glyphicon {
+    cursor: pointer;
+}
+
+.author-name {
+    font-weight: bold;
+    color: #9BC995;
+}
+
+/* FORM */
+.edit-form input {
+    margin-bottom: 20px;
+}
+.edit-form button {
+    margin-top: 20px;
+    background-color: #9BC995;
+    border-color: #9BC995;
+    color: #fff;
+}
+
+.edit-form button:hover {
+    background-color: #fff;
+    border-color: #9BC995;
+    color: #9BC995;
+}
+
+.panel-heading .glyphicon {
+    padding: 2px;
+    cursor: pointer;
+}
